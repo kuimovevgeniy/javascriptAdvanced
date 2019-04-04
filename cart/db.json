@@ -1,0 +1,26 @@
+{
+  "cart": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "Шорты",
+      "price": 100,
+      "quantity": 1,
+      "cover": "shorts-2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Сланцы",
+      "price": 50,
+      "quantity": 1,
+      "cover": "slans-2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Футболка",
+      "price": 200,
+      "quantity": 1,
+      "cover": "futbolki-2.jpg"
+    }
+  ]
+}
