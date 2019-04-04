@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <title>AJAX</title>
+</head>
+
+<body>
+  <button id="send">Send request</button>
+  <ul id="clothes"></ul>
+  <script>
+    function sendRequest(url) {
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url); // настройка запроса 
+        xhr.send(); // отправка запроса
+
+        xhr.onreadystatechange = () => { // срабатывает на все изменения состояния запроса
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if(xhr.status === 200) {
+              resolve(JSON.parse(xhr.responseText));
+            } else {
+              reject();
+            }
+          }
+        }
+      });
+    }
+
+    const $button = document.querySelector('#send');
+    $button.addEventListener('click', () => {
+      sendRequest('http://localhost:3000/clothes.json').then((clothes) => {
+        document.querySelector('#clothes').innerHTML = clothes.map(item => `<li>${item.name}: ${item.price}, ${item.cover}</li>`).join('');
+      });
+    });
+  </script>
+</body>
+
+</html>
