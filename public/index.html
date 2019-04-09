@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<link href="style.css" rel="stylesheet">
+	<title>Cart</title>
+</head>
+<body>
+	<div id="app">
+		<header>
+      <search @onsearch="handleSearch"></search>
+      <cart :cart="cart" :total="total" @ondelete="handleDeleteClick"></cart>
+      <button>Корзина</button>
+    </header>
+    <main>
+      <products @onbuy="handleBuyClick" :query="searchQuery"></products>
+    </main>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script> 
+	<script src="app.js"></script>
+</body>
+</html>
