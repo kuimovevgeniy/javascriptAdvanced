@@ -1,8 +1,5 @@
-{
-  "cart": [ 
-  ],
-  "products": [
-    {
+[
+  {
       "id": 1,
       "name": "Шорты",
       "price": 100,
@@ -20,5 +17,4 @@
       "price": 200,
       "cover": "futbolki-2.jpg"
     }
-  ]
-}
+]

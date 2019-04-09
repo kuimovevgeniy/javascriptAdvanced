@@ -10,34 +10,15 @@
 <body>
 	<div id="app">
 		<header>
-				<search></search>
-				
-      
-      <ul v-if="cart.length">
-        <li v-for="item in cart">
-          {{ item.name}} {{ item.quantity}}
-      </li></ul>
-      <div v-if="cart.length" >Сумма: {{totalCart}}</div>
-      <div v-if="!cart.length" >Пусто</div>
+      <search @onsearch="handleSearch"></search>
+      <cart :cart="cart" :total="total" @ondelete="handleDeleteClick"></cart>
       <button>Корзина</button>
-		</header>
-		<main>
-			<div class="goods" v-if="filteredItems.length">
-				<div v-for="item in filteredItems">
-					<div>
-						<h3 class="name">{{item.name}}</h3><img class="pic" src="img/{{item.cover}}">
-						<p>Цена: <span class="price"></span>{{item.price}}</p><button id="button" @click="handleBuyClick(item)">Добавить в корзину</button>
-					</div>
-				</div>
-			</div>
-			<div class="empty" v-if="filteredItems.length">
-				Пусто
-			</div>
-		</main>
+    </header>
+    <main>
+      <products @onbuy="handleBuyClick" :query="searchQuery"></products>
+    </main>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js">
-	</script> 
-	<script src="app.js">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script> 
+	<script src="app.js"></script>
 </body>
 </html>
