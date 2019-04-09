@@ -1,26 +1,26 @@
 {
-    "name": "javascriptadvanced",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/kuimovevgeniy/javascriptAdvanced.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/kuimovevgeniy/javascriptAdvanced/issues"
-    },
-    "homepage": "https://github.com/kuimovevgeniy/javascriptAdvanced#readme",
-    "dependencies": {
-      "express": "^4.16.4",
-      "vue": "^2.6.10"
-    },
-    "devDependencies": {
-      "webpack": "^4.29.6"
-    }
+  "name": "javascriptadvanced",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuimovevgeniy/javascriptAdvanced.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuimovevgeniy/javascriptAdvanced/issues"
+  },
+  "homepage": "https://github.com/kuimovevgeniy/javascriptAdvanced#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.6"
   }
+}
