@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1.0" name="viewport">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="headerInside container">
+        <div class="logo">
+            BRAN<span>D</span>
+        </div>
+        <div class="searchWrap">
+            <div class="searchBrowse">
+                Browse <i class="fas fa-caret-down"></i>
+            </div>
+            <input type="text">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <img alt="" class="headerCart" src="images/cart.png">
+        <button class="accountBtn">My Account <i class="fas fa-caret-down"></i></button>
+    </div>
+</header>
+<nav class="topNav">
+    <a href="">HOME</a>
+    <a href="product.html">MAN</a>
+    <a href="">WOMEN</a>
+    <a href="">KIDS</a>
+    <a href="">ACCOSERIESE</a>
+    <a href="">FEATURED</a>
+    <a href="">HOT DEALS</a>
+</nav>
+<div class="topBanner">
+    <div class="container topBannerContainer">
+        <div class="topBannerSign">
+            <div class="topSign">
+                THE BRAND
+            </div>
+            <div class="bottomSign">
+                OF LUXERIOUS <span>FASHION</span>
+            </div>
+        </div>
+    </div>
+</div>
+<main>
+    <section class="container hotdeal">
+        <div>
+            <div class="hotdealElementOne">
+                <div class="hotdealContainer">
+                    <div class="topSign hotdealTopSign">
+                        HOT DEAL
+                    </div>
+                    <div class="bottomSign hotdealBottomSign">
+                        <span>FOR MEN</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hotdealElementTwo">
+                <div class="hotdealContainer">
+                    <div class="topSign hotdealTopSign">
+                        LUXIROUS & TRENDY
+                    </div>
+                    <div class="bottomSign hotdealBottomSign">
+                        <span>ACCESORIES</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="hotdealElementThree">
+                <div class="hotdealContainer">
+                    <div class="topSign hotdealTopSign">
+                        30% OFFER
+                    </div>
+                    <div class="bottomSign hotdealBottomSign">
+                        <span>WOMEN</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hotdealElementFour">
+                <div class="hotdealContainer">
+                    <div class="topSign hotdealTopSign">
+                        NEW ARRIVALS
+                    </div>
+                    <div class="bottomSign hotdealBottomSign">
+                        <span>FOR KIDS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fetured" id="app">
+        <h2 class="feturedHead">Fetured Items</h2>
+        <div class="feturedDesc">Shop for items based on what we featured in this week</div>
+        <div class="feturedElements" v-if="filteredItems.length">
+            <div class="feturedItem" v-for="item in filteredItems">
+                <div class="feturedImg" v-bind:class="[item.cover]">
+                    <div class="feturedCart">
+                        <button class="accountBtn feturedAddtoCart" id="button" @click="handleBuyClick(item)">
+                            <img alt="" src="images/cart_white.png">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="feturedItemTitle">{{item.name}}</div>
+                <div class="feturedItemPrice">${{item.price}}</div>
+            </div>
+            <!-- <div class="feturedItem">
+                <div class="feturedImg feturedFotoItem2">
+                    <div class="feturedCart">
+                        <button class="accountBtn feturedAddtoCart">
+                            <img alt="" src="images/cart_white.png">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="feturedItemTitle">Mango People T-shirt</div>
+                <div class="feturedItemPrice">$52.00</div>
+            </div>
+            <div class="feturedItem">
+                <div class="feturedImg feturedFotoItem3">
+                    <div class="feturedCart">
+                        <button class="accountBtn feturedAddtoCart">
+                            <img alt="" src="images/cart_white.png">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="feturedItemTitle">Mango People T-shirt</div>
+                <div class="feturedItemPrice">$52.00</div>
+            </div>
+            <div class="feturedItem">
+                <div class="feturedImg feturedFotoItem4">
+                    <div class="feturedCart">
+                        <button class="accountBtn feturedAddtoCart">
+                            <img alt="" src="images/cart_white.png">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="feturedItemTitle">Mango People T-shirt</div>
+                <div class="feturedItemPrice">$52.00</div>
+            </div>
+            <div class="feturedItem">
+                <div class="feturedImg feturedFotoItem5">
+                    <div class="feturedCart">
+                        <button class="accountBtn feturedAddtoCart">
+                            <img alt="" src="images/cart_white.png">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="feturedItemTitle">Mango People T-shirt</div>
+                <div class="feturedItemPrice">$52.00</div>
+            </div>
+            <div class="feturedItem">
+                <div class="feturedImg feturedFotoItem6">
+                    <div class="feturedCart">
+                        <button class="accountBtn feturedAddtoCart">
+                            <img alt="" src="images/cart_white.png">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="feturedItemTitle">Mango People T-shirt</div>
+                <div class="feturedItemPrice">$52.00</div>
+            </div>
+            <div class="feturedItem">
+                <div class="feturedImg feturedFotoItem7">
+                    <div class="feturedCart">
+                        <button class="accountBtn feturedAddtoCart">
+                            <img alt="" src="images/cart_white.png">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="feturedItemTitle">Mango People T-shirt</div>
+                <div class="feturedItemPrice">$52.00</div>
+            </div>
+            <div class="feturedItem">
+                <div class="feturedImg feturedFotoItem8">
+                    <div class="feturedCart">
+                        <button class="accountBtn feturedAddtoCart">
+                            <img alt="" src="images/cart_white.png">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="feturedItemTitle">Mango People T-shirt</div>
+                <div class="feturedItemPrice">$52.00</div>
+            </div> -->
+        </div>
+        <button class="accountBtn feturedBtn"><a href="product.html">Browse All Product</a> <i class="fas fa-long-arrow-alt-right"></i></button>
+    </section>
+    <section class="offer">
+        <div class="offerWonen">
+            <div class="offerText">30% <span>offer</span><br><span>for women</span></div>
+        </div>
+        <div class="offerDetails">
+            <div class="offerUnit offerUnit1">
+                <div class="offerDetailsHead">Free Delivery</div>
+                <div class="offerDetailsText">Worldwide delivery on all. Authorit tively morph next-generation innov
+                    tion with extensive models.
+                </div>
+            </div>
+            <div class="offerUnit offerUnit2">
+                <div class="offerDetailsHead">Sales & discounts</div>
+                <div class="offerDetailsText">Worldwide delivery on all. Authorit tively morph next-generation innov
+                    tion with extensive models.
+                </div>
+            </div>
+            <div class="offerUnit offerUnit3">
+                <div class="offerDetailsHead">Free Delivery</div>
+                <div class="offerDetailsText">Worldwide delivery on all. Authorit tively morph next-generation innov
+                    tion with extensive models.
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="subscribeWrap">
+        <div class="subscribe">
+            <div class="reviews">
+                <div class="reviewsUnit">
+                    <div class="reviewsUnitLeft">
+                        <img alt="" src="images/reviewsunitleft.png">
+                    </div>
+                    <div class="reviewsUnitRight">
+                        <blockquote>
+                            "Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum
+                            a.
+                            Aliquam condimentum mattis neque sed pretium"
+                        </blockquote>
+                        <div class="reviewsName">
+                            Bin Burhan
+                        </div>
+                        <div class="reviewsFrom">
+                            Dhaka, Bd
+                        </div>
+                        <div class="reviewsSwitch">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subscribeDivider"></div>
+            <div class="subscribeRight">
+                <div class="subscribeRightHead">
+                    Subscribe
+                </div>
+                <div class="subscribeRightHeadText">
+                    FOR OUR NEWLETTER AND PROMOTION
+                </div>
+                <form action="" class="subscribeForm">
+                    <input placeholder="Enter Your Email" type="text">
+                    <button>Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footerbrand">
+        <div class="logo">
+            BRAN<span>D</span>
+        </div>
+        <div class="footerbrandText1">
+            Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate
+            multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes
+            and cross-unit partnerships.
+        </div>
+        <div class="footerbrandText2">
+            Efficiently plagiarize 24/365 action items and focused infomediaries. Distinctively seize spanerior
+            initiatives for wireless technologies. Dynamically optimize.
+        </div>
+    </div>
+    <div class="footerAdaptive">
+        <div class="footerColumn">
+            <h2>COMPANY</h2>
+            <a href="">Home</a>
+            <a href="">Shop</a>
+            <a href="">About</a>
+            <a href="">How It Works</a>
+            <a href="">Contact</a>
+        </div>
+        <div class="footerColumn">
+            <h2>INFORMATION</h2>
+            <a href="">Tearms & Condition</a>
+            <a href="">Privacy Policy</a>
+            <a href="">How to Buy</a>
+            <a href="">How to Sell</a>
+            <a href="">Promotion</a>
+        </div>
+        <div class="footerColumn">
+            <h2>SHOP CATEGORY</h2>
+            <a href="">Men</a>
+            <a href="">Women</a>
+            <a href="">Child</a>
+            <a href="">Apparel</a>
+            <a href="">Brows All</a>
+        </div>
+    </div>
+</footer>
+<div class="copyrights">
+    <div class="copyrightsWrap">
+        <div class="copyrightsLeft">© 2019 Brand All Rights Reserved.</div>
+        <div class="copyrightsRight">
+            <a href="">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+            <a href="">
+            <i class="fab fa-twitter"></i>
+        </a>
+            <a href="">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+            <a href="">
+            <i class="fab fa-pinterest-p"></i>
+        </a>
+            <a href="">
+            <i class="fab fa-google-plus-g"></i>
+        </a>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+</script>
+<script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js">
+</script>
+<script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
